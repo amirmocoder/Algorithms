@@ -23,13 +23,13 @@ int binarySearch(vector<int>& lst, int find) {
 }
 
 int main() {
-    vector<int> lst = {};
+    vector<int> lst = {1,2,3,4,5};
     int find;
     cin >> find;
     int index = binarySearch(lst, find);
     if (index != -1)
-        cout << "Element found at index " << index;
+        cout << "exists in " << index<<"'th index";
     else
-        cout << "Element not found in the array";
+        cout << "not exists";
     return 0;
 }
