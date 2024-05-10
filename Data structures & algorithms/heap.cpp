@@ -1,3 +1,14 @@
+#include <iostream>
+using namespace std;
+
+// Heap
+
+void swap(int& a, int& b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
 void moveUp(int a[], int i) {
     int k=i/2;
     while(k>=1 && a[k]<a[i]) {
@@ -26,7 +37,7 @@ void moveDown(int a[], int n, int i ) {
     }
 }
 
-void delete(int a[], int n) {
+void remove(int a[], int n) {
     swap(a[1], a[n]);
     moveDown(a,n-1, 1);
 }
@@ -40,6 +51,10 @@ void makeHeap(int a[], int n){
 void HeapSort(int a[], int n) {
     makeHeap(a,n);
     for( int i=1;i<=n-1;i++) {
-        delete(a, n-i+1);
+        remove(a, n-i+1);
     }
+}
+
+int main(){
+    return 0;
 }

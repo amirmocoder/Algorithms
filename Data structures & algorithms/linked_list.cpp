@@ -1,3 +1,8 @@
+#include <iostream>
+using namespace std;
+
+// Linked list
+
 struct node {
     int data;
     node *next;
@@ -22,6 +27,8 @@ int main() {
     return 0;
 }
 
+// Traversing on a Linked List
+
 void print(node *start){
     node *p=start;
     
@@ -31,6 +38,8 @@ void print(node *start){
     }
 }
 
+// Add to first of a Linked list
+
 void insertFirst(node **start, int x) {
     node *p=new node();
     
@@ -38,6 +47,8 @@ void insertFirst(node **start, int x) {
     p ->next=*start; 
     *start=p;
 }
+
+// Add to end of a Linked list
 
 void insertLast(node **start, int x) {
     node *t=new node();
@@ -55,6 +66,9 @@ void insertLast(node **start, int x) {
             p->next=t;
 }
 }
+}
+
+// Delete x from a Linked list
 
 void del(node **start, int x) {
     node *p,*q;
@@ -77,6 +91,9 @@ void del(node **start, int x) {
              free(q);
          }
 }
+}
+
+// Traversing on a Circular Linked list
 
 void iterat(node *start) {
     node *p=start;
@@ -85,11 +102,13 @@ void iterat(node *start) {
             cout<< p->data;
             p=p->next;
         }
-        while(p!=start)
+        while(p!=start);
     }
 }
 
-void insertFirst(node **start, int x) { 
+// Add to first of a Circular Linked list
+
+void insertFirstCircular(node **start, int x) { 
      node *p,*q,*t=new node(); 
      t ->data =x; 
      if(*start==NULL) { 
@@ -106,13 +125,29 @@ void insertFirst(node **start, int x) {
     *start= t; 
 }
 
-struct node {
+// Doubly Circular Linked list
+
+struct Doublynode {
     int data;
-    node *left,*right;
+    Doublynode *left,*right;
 };
 
-void del(node *r) {
-    node *p,*q;
+// Add to a Doubly Circular Linked list
+
+void insert(Doublynode *p , Doublynode *q , int x) {
+    Doublynode *r=new Doublynode();
+
+    r->data=x;
+    p->right=r;
+    r->left=p;
+    q->left=r;
+    r->right=q;
+}
+
+// Delete from a Doubly Circular Linked list
+
+void del(Doublynode *r) {
+    Doublynode *p,*q;
     
     p=r->left;
     q=r->right;
@@ -124,13 +159,3 @@ void del(node *r) {
 
 //1,3: (r->left)->right=r->right;
 //2,4: (r->right)->left=r->left;
-
-void insert(node *p , node *q , int x) {
-    node *r=new node();
-
-    r->data=x;
-    p->right=r;
-    r->left=p;
-    q->left=r;
-    r->right=q;
-}
