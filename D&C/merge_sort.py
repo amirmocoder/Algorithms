@@ -26,5 +26,3 @@ def sort(a):
         sort(left)
         sort(right)
         merge(a, left, right)
-
-sort(a)
