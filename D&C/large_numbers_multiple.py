@@ -1,9 +1,9 @@
 def pro(u,v):
-    s = 2
+    threshold = 2
     n = max(len(str(u)),len(str(v)))
     if u == 0 or v == 0 :
         return 0
-    elif n<=s :
+    elif threshold<=s :
         return u*v
     else:
         m = n // 2
