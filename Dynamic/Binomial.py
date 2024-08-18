@@ -1,13 +1,13 @@
 import numpy
 
-# محاسبه دوجمله ای با تقسیم و غلبه
+# divide and conquer form
 def f(n,k):
     if (k ==0) or (k==n):
         return 1
     else:
         return f(n-1,k) + f(n-1,k-1)
 
-# محاسبه دوجمله ای با برنامه نویسی پویا
+# dynamic form
 def bin(n,k):
     b = numpy.zeros((n,k))
     for i in range(n):
