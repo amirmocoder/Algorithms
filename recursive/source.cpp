@@ -46,3 +46,13 @@ void fibo_2(int n) {
 int main() {
     return 0;
 }
+
+// the Tower of Hanoi
+void towerOfHanoi(int n, a, b, c) {
+    if (n == 1) {
+        cout << "Move disk 1 from " << a << " to " << b << endl;
+        return;
+    }
+    towerOfHanoi(n - 1, a, c, b);
+    cout << "Move disk " << n << " from " << a << " to " << b << endl;
+    towerOfHanoi(n - 1, c, b, a);
